@@ -1,0 +1,63 @@
+01 MAVEN AND SPRING CORE
+
+Maven is a project management tool. It is based on POM.xml Project Object Model.
+
+It is used to add various dependecies, plug-ins and jar files into the project.
+
+NEEDS:
+1. No need to manually add jars.
+2. Create conventional structure.
+3. Easy build and deployment.
+
+POM:
+1. Project description:
+	modelVersion - should be set to 4.0.0
+	groupId - package(com.cts)
+	artifactId - project name
+	version - the version of the artifact under the specified group
+2. Dependencies.
+
+
+# There are three types of repositories:
+
+Local Repository
+Remote Repository
+Central Repository
+
+
+_________________________________________________________________________
+
+
+SPRING
+-- Framework used for developing JEE applications.
+-- Lightweight
+-- Used to make program loosely coupled and integrated.
+
+Dependency Injection: 
+	Design pattern to make program loosely coupled.
+
+IOC( Inversion Of Control ): 
+	Giving control of injecting objects to spring container.
+
+Spring Config file: 
+	XML file contains classes info and describe how they are linked to each other.
+
+Constructor and Setter injection
+--In constructor injection, partial injection is not allowed whereas it is allowed in setter injection.
+-- <property> is used in setter.
+-- <contructor-arg> is used in constructor.
+
+Beans:
+	These are Objects managed by IOC container. They can be created in xml or using annotations.
+
+Bean Life Cycle:
+1. Instantiatesed by IOC container.
+2. Populated.
+3. Injected as configured.
+
+Autowiring:
+Relationship between beans.
+
+
+
+

@@ -1,0 +1,15 @@
+REST API
+Representational State Transfer
+
+POST: creating new user
+GET: retrieve data
+PUT: upadate
+DELETE: dalete user
+
+ERRORS
+
+404: not found
+500: server side error
+200: success
+201: created
+401: unauthorised

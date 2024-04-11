@@ -1,0 +1,210 @@
+Git & GitHub
+
+
+
+git status
+-- to know if there is git repo
+
+git init
+-- to create git repo from directory
+
+
+git add file.name
+-- to add file to staging stage
+
+git add .
+-- to add everything
+
+git commit -m "message"
+-- to commit files in staging stage with message
+
+git log
+-- gives the log of all the commits
+
+
+
+
+------------------------Remote and Push----------------------
+
+
+
+git remote -v
+-- to view remote branch
+
+git remote add origin <url>
+-- add remote branch 
+
+git remote push -u origin main
+-- pushing main (can also be master) to origin
+
+git remote rename <old name> <new name>
+
+git remote remove <name>
+-- remove connection b/w local and remote repo
+
+
+
+
+
+---------------------------Fetch and Pull-------------------------
+
+
+
+
+git fetch
+-- it will fetch files on local machine from gitHub.com (does not show files in working dir)
+
+git checkout origin/main
+-- this will allow you to check the files (you will be able to see files but it has not overwritten yet the working dir)
+
+git switch main
+-- to switch to work dir (remote: origin/main , local: main)
+
+git pull
+-- add files to work dir from remote dir
+
+
+
+-------------------------- Branches ------------------------
+
+HEAD
+-- tells on which branch are you working on (i.e., master/main , new branch)
+
+git branch
+-- gives branches that exist
+
+git branch branch_name
+-- create new branch
+
+git switch branch_name
+-- switches to the branch or head now points to new branch.
+ 
+
+git switch branch_to_rename
+git branch -m new_name
+-- to rename a branch, switch to that branch and then -m "move" it to new_name.
+
+ 
+git branch -d branch_to_delete
+-- to delete a branch, cannot delete branch you are checkimg out
+-- use -D if not mereged warning
+
+
+
+-------------------------- MERGE --------------------------
+ 
+1. Fast Forward Merge: When no commits have been made to master/ main branch.
+
+git switch main
+git merge new_branch
+
+
+2. Git Merge: WHen there is no conflict b/w two branches, git will add a commit to main "Merge new_branch"
+
+
+3. Conflict: if there are conflicts then you have to resolve those.
+
+
+------------------------------- DIFF -----------------------------
+
+git diff
+--compare same file, commited vs non-commited changes
+
+git diff master new_branch
+-- compare same file from diff branch
+
+
+
+----------------------------- CHECKOUT ----------------------------
+
+git log --oneline
+-- to get log in simplified way / hash code
+
+git checkout #######
+-- put hashcode of a commit you you want to checkout in detached HEAD mode
+
+git checkout master/main
+-- to go back
+
+
+
+------------------------------- RESTORE --------------------------
+
+-- you CANNOT undo a git restore.
+
+
+git restore filename
+-- if you have not commited and messed up the code, use this to go back to the latest commit
+
+git restore --source HEAD~N filename
+-- N is no of commits, it will go back N no of comiits from the latest commit
+
+git restore --staged filename
+-- to de-stage the staged file
+
+
+-------------------------------- RESET -----------------------
+
+git reset ######
+- reset the commits (remove unwanted commit)/ does not change the changes in the file 
+
+git reset ###### --hard
+- reset commit + file changes
+
+
+
+
+--------------------------- REVERT ----------------------------
+
+It will create a new commit which is same to the commit you want to go, in this way it saves the history hence it is a safer way to go to previous commits.
+
+git revert ######
+-- code is the commit you want to revert
+
+
+
+--------------------------- GIT STASH ---------------------
+
+if your working on a brach and want to change the branch without commiting those changes use stash otherwise those files will come along to another branch
+
+git stash
+-- to add changes/files to the stash list
+
+git stash pop
+-- to apply most recent stash and pop from stash list
+
+git stash apply
+-- to apply most recent stash & will remain in stash list 
+
+
+
+------------------------------REMOTE-----------------------
+
+git remote
+- list all remote connections
+
+git remote -v
+-- connections + url
+
+git remote add <name> <url>
+
+
+git remote rm <name>
+-- to remove remote connection
+
+.gitignore file at root with patterns to igonre files that should be not uploaded to GitHub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

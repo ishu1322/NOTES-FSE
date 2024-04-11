@@ -1,0 +1,40 @@
+SPRING DATA JPA
+
+JAVA PERSISTENCE API
+
+-- Used to simplify the process of writing code while apllying CRUD operations.
+
+ADVANTAGES:
+-- reduced code
+-- user friendly
+-- no config file
+
+ORM Framework
+-- maintain relationship between an objects and the relational database.
+
+__________________________________________________________________________
+HIBERNATE LIFECYCLE:
+
+1. Transient: 
+-- initial state, when it is not associated with any session i.e., not connected to database.
+-- object is in heap memory.
+
+2. Persistent:
+-- associated with session or connected with database.
+-- when we use save or persist.
+-- modifications make changes in database.
+
+3. Detached:
+-- after we close session, no more associated with session.
+___________________________________________________________________________
+
+IDENTIFIER GENERATION
+
+@GeneratedValue (strategy = GenerationType.AUTO): Automatic
+
+@GeneratedValue (strategy = GenerationType.IDENTITY): Using identity column
+
+_________________________________________________________________________
+
+JPQL: Java Persistence Query language 
+Criteria API: custom queries

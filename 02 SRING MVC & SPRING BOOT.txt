@@ -1,0 +1,37 @@
+02 SRING MVC & SPRING BOOT
+
+Model-View-Controller is a software design pattern.
+
+MODEL: Data.
+Controller: bussiness logic & API's
+View: JSP pages.
+
+ADVANTAGES OF MVC:
+-- Light weight
+-- Rapid development
+-- Reusable code
+-- Separate role
+
+CONFIG FILE:
+-- define base-package and view resolver where DispatcherServlet searches for controller classes and view components(jsp).
+
+DispatcherServlet:
+Handlles the hhtp requests from controller.
+
+InternalResourceViewResolver:
+-- handles the jsp pages and their paths.
+
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/WEB-INF/jsp/"></property>  
+        <property name="suffix" value=".jsp"></property>          
+     </bean>  
+
+
+_________________________________________________________________________
+
+SPRING BOOT
+
+-- It is a spring module which provide RAD( Rapid Application Development).
+-- It requires very little configuration.
+
+ 
