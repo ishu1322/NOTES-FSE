@@ -1,0 +1,8 @@
+COMPONENT LIFECYCLE
+
+ngOnInit() 
+	-- When ng initialize component for first time.
+ngOnChanges()
+	-- When input property changes
+ngDestroy()
+	-- before destroying component

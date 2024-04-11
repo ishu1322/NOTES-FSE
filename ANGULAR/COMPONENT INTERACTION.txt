@@ -1,0 +1,72 @@
+COMPONENT INTERACTION
+
+1. @Output @Input
+
+2. Service
+
+_______________________________________________________
+
+@Input()
+
+-- parent to child
+
+Steps:
+
+1. Instantiate a variable in ParentComponent (parent.component.ts):
+
+ 	titleInParent:string="This is title in Parent";
+
+
+2. Instantiate a variable in ChildComponent(child.component.ts) using @Input():
+
+	@Input() titleInChild:string | undefined;
+
+3. add child component in parent.component.html using property binding[]:
+
+	<app-child [titleInChild]="titleInParent"></app-child>
+
+4. add parent component in app component (app.component.html)
+
+_______________________________________________________
+
+@Output() decorator
+
+-- child to parent
+
+Steps:
+
+1. Create a button and text or any input in child.component.html.
+
+	<div class="container margin-5">
+    <input type="text" #newItem>
+    <button (click)="btnClick(newItem.value)" >Click here</button>
+	</div>
+
+2. Create mentioned method in button into child.component.ts which saves data into a variable myData which is from Class EventEmitter.
+Using this method emit value to this variable
+
+ @Output() myData=new EventEmitter<any>();
+
+  btnClick(value:any){
+    this.myData.emit(value);
+  }
+
+
+3. set event into parent.component.html while setting routing
+
+	<app-child [titleInChild]="titleInParent" (myData)="getData($event)"></app-child>
+
+and handle this event using a method wuth arg ($event)
+
+4. Implement this mwthod in .ts file
+
+	fromChild:any | undefined;
+
+  getData($event:any){
+    this.fromChild=$event;
+    console.log("It is from parent "+this.fromChild);
+  }
+
+5. Use this variable in .html
+
+______________________________________________________________________

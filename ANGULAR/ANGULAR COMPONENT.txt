@@ -1,0 +1,70 @@
+ANGULAR COMPONENT
+
+
+Command to create new component : `ng g c navabar`
+
+-- g for generate
+-- c for component
+
+________________________________________________________
+
+DIRECTIVE:
+
+--are the classes that add or change behaviour of DOM.
+
+1. Attribute Directive
+	-- change appearance or behaviour of an element,component or another directive.
+
+2. Structural Directive
+	-- chabge the DOM layout by adding or removing DOM element.
+
+_________________________________________________________
+
+ATTRIBUTE DIRECTIVE
+
+_______________________ngStyle___________________________________
+<div [ngStyle]="{'color':'green','background':'black',margin:'12px',padding:'12px'}">
+<p >Hello it is using Attribute Directive and using ngStyle</p>
+</div>
+<button [ngStyle]="addButtonStyle()">Click Me !!</button>
+
+
+# attribute directive using class
+https://angular.io/guide/attribute-directives
+
+
+
+
+________________________________________________________
+
+STRUCTURAL DIRECTIVE
+
+https://angular.io/guide/structural-directives
+
+ <ul>
+    <li *ngFor="let person of people">
+      {{person.name}} -- {{person.country}}    
+    </li>
+  </ul>
+
+____________________________________________________________
+
+PIPES
+
+	-- to transform strings, currency amounts, dates, and other data for display.
+
+<!--
+        <tbody><tr *ngFor='let emp of employees'>
+                <td>{{ID | uppercase}}</td>
+                <td>{{student.Name | titlecase}}</td>
+                <td>{{student.DOB | date:'dd/MM/yyyy'}}</td>
+                <td>{{student.Gender | lowercase}}</td>
+                <td>{{student.CourseFee | currency:'USD':true}}</td>
+            </tr>
+        </tbody>
+    -->
+
+Custom pipe:
+https://angular.io/guide/pipes-custom-data-trans
+
+

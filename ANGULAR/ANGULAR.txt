@@ -1,0 +1,161 @@
+ANGULAR
+
+app.component.html : for structure
+
+app.component.ts  :  for business logic
+
+
+_______________________________________________________________________
+
+APP.COMPONENT.TS :
+
+-- it is also called decorator
+
+''''
+@Component({
+
+selector: "app-root",   // component tag(name)
+
+templateUrl: "./app.component.html"      // path for the html page
+
+styleUrls: ['./app.component.css']        // path for styling
+
+})
+
+export class AppComponent {
+  title = 'helloProject';
+}
+
+''''
+
+--- export is used so that class AppComponent can be accessed by other classes too outside this class.
+
+--- variables defined in AppComponet Class can be accessed by html using {{variableName}} and this is called CONCEPT OF INTERPOLATION
+
+_______________________________________________________________________
+
+ASSESTS
+-- it used to save files required in the project like images.
+
+_______________________________________________________________________
+
+PACKAGE.json
+
+-- contains dependencies required in project similar to POM.xml.
+
+_______________________________________________________________________
+
+node_modules
+
+-- similar to .m2 folder.
+-- contains dependecies files.
+-- while uploading project to git, we usually delete this folder to decrease the size of the project.
+-- we need to use `npm install` to again download dependencies before running project again.
+
+_______________________________________________________________________
+
+ARCHITECTURE:
+
+
+# COMPONENTS: 
+
+-- contains data(variables),businness logic, application, classes, html page
+-- defines binding between variables and html page using interpolation or property-binding.
+
+
+# SERVICE:
+
+-- it enables to use methods to be used by different components, we write those methods in service.
+-- it enables to share data from one component to another.
+
+# MODULES:
+
+-- container for block of code
+
+# DIRECTIVE:
+
+-- DOM structure: Document Object Model
+-- It is used to change the behaviour of DOM. 
+
+# DEPENDENCY INJECTION:
+
+-- injection of service into components, if component wants to use business logic defined in service.
+
+# ROUTING:
+-- communication between components.
+______________________________________________________________________
+
+BOOTSTRAP PROCESS:
+
+1. main.ts : 
+ --- specifies AppModule(parent of all child component) to start
+
+------->
+
+2. app.module.ts  : 
+
+--- contains decorator @NgModule with all the components and imports, in last it will read ` bootstrap: [AppComponent] ` and will go to app.component.ts
+
+------->
+
+3. app.component.ts :
+
+--- which contains class AppComponent containing business logic and variables.
+
+------->
+
+4. renders template.html
+
+5. index.html:
+
+-- it contains <app-root> </app-root> inside body which will tell angular to run selector with app-root.
+_____________________________________________________________________
+
+DATA BINDING:
+
+-- sending data from component to template or template to component.
+
+Property Binding: Component to template.
+Event Binding: template to component.
+Two-way Binding: both ways
+
+
+ONE WAY BINDING:
+
+Interpolation: Model to view, using {{}} used for strings and number
+
+Property Binding: model to view, for properties like [disabled]="variableName", described by []
+
+Event Binding: 
+-- template to model, bind events along with methods.
+-- described by ()
+
+Two-way BINDING:
+-- [()]
+
+_____________________________________________________________________
+
+TEMPLATE:
+
+-- user interface with which end user interact.
+
+TYPES:
+1. inline template
+-- used for less lines.
+-- when we do not give path to html, but write html in component itself.
+-- " <body> " for single line
+-- `<body> ` for multiple line
+
+@Component({
+
+selector: "app-root",  
+
+template: `<h1>
+		Hello,{{name}}  
+		</h1>`,
+styleUrls: ['./app.component.css']      
+
+})
+
+2. template in external file(templateUrl).
+

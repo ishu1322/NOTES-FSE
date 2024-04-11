@@ -1,0 +1,21 @@
+ROUTING
+
+STEPS
+
+1. Create component.
+
+2. Set route in `app-routing.module.ts`.
+
+	const routes: Routes = [
+  	{path:'Home', component:HomeComponent}
+	];
+
+3. Set routing link in navbar (app.component.html):
+
+	<li class="nav-item" routerLinkActive="active">
+            <a class="nav-link active"
+            routerLink="Home" >Home</a>
+          </li>
+
+4. at end of navbar(app.component.html) put tag:
+	  <router-outlet></router-outlet>
